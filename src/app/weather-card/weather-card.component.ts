@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {WeatherCardModel} from '../../Models/Weather-card-model'
-import { WeatherService } from "../../Services/weather/weather.service";
+import {WeatherCardModel} from '../Models/Weather-card-model'
+import { WeatherService } from "../Services/weather/weather.service";
 @Component({
   selector: 'app-weather-card',
   templateUrl: './weather-card.component.html',
