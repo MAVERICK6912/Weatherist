@@ -20,9 +20,7 @@ export class WeatherCardComponent implements OnInit {
       this.dateTimeOfCity=res['formatted'];
       console.log(this.dateTimeOfCity);
       // this.dateTimeOfCity="2019-02-17 18:58:00"; //for testing.
-
       console.log((this.dateTimeOfCity.substring(11,13)));
-      
       if (Number(this.dateTimeOfCity.substring(11,13))>=19 || Number(this.dateTimeOfCity.substring(11,13))<4) {
         this.weatherCardDetails.isNight=true;
         console.log(this.weatherCardDetails.isNight);
@@ -49,7 +47,6 @@ export class WeatherCardComponent implements OnInit {
     error=>{
       console.log(error);
     });
-
     // console.log((this.dateTimeOfCity.substring(11,13)));
   }
 }
