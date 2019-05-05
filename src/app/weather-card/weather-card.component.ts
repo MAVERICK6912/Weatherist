@@ -14,14 +14,7 @@ export class WeatherCardComponent implements OnInit {
   constructor(public weatherService: WeatherService) { }
 
   ngOnInit() {
-    // this.weatherService.getCurrentTemp('Bengaluru','metric').subscribe(
-    //   res=>{
-    //     console.log(res)
-    //     this.weatherCardDetails.currentTemp=res.toString();
-    //   }
-    // );
-    // Asia,Kolkata
-    //Pune,in
+    //getting time info for every city.    
     this.weatherService.getTimeOfDay('Asia','Kolkata').subscribe(res=>{
       console.log(res);
       this.dateTimeOfCity=res['formatted'];
@@ -42,6 +35,8 @@ export class WeatherCardComponent implements OnInit {
     error=>{
       console.log(error);
     });
+
+    //Getting weather data for each city.
     this.weatherService.getWeatherCardData('bengaluru,in','metric').subscribe(res=>{
       console.log(res);
       this.weatherCardDetails.cityName=res['name'];

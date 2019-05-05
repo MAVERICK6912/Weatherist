@@ -48,25 +48,25 @@ export class WeatherService {
     return citiesSubject;
   }
 
-  getWeatherCondition(city:string):Subject<string>{
-    const dataSub=new Subject<string>();
-    this.http.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.weatherApiKey}`
-    ).subscribe((data)=>{
-      dataSub.next(data['weather'][0].main);
-    });
-    return dataSub;
-  }
+  // getWeatherCondition(city:string):Subject<string>{
+  //   const dataSub=new Subject<string>();
+  //   this.http.get(
+  //     `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${this.weatherApiKey}`
+  //   ).subscribe((data)=>{
+  //     dataSub.next(data['weather'][0].main);
+  //   });
+  //   return dataSub;
+  // }
 
-  getCurrentTemp(city:string, metric:'metric'|'imperial'='metric'):Subject<number>{
-    const dataSub=new Subject<number>();
-    this.http.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${metric}&APPID=${this.weatherApiKey}`
-    ).subscribe((data)=>{
-      dataSub.next(Math.round(Number(data['main'].temp)));
-    });
-    return dataSub;
-  }
+  // getCurrentTemp(city:string, metric:'metric'|'imperial'='metric'):Subject<number>{
+  //   const dataSub=new Subject<number>();
+  //   this.http.get(
+  //     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${metric}&APPID=${this.weatherApiKey}`
+  //   ).subscribe((data)=>{
+  //     dataSub.next(Math.round(Number(data['main'].temp)));
+  //   });
+  //   return dataSub;
+  // }
   getTimeOfDay(region:string,city: string):Subject<object>{
     const time=new Subject<object>();
     this.http.get(
