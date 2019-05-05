@@ -4,7 +4,8 @@ body {
 }
 
 .svg-contain {
-  max-width: 150px;
+  max-width: 170px;
+  max-height: 150px;
   margin: 3px;
   width: 100%;
 }
