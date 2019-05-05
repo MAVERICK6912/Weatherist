@@ -30,7 +30,7 @@ export class WeatherCardComponent implements OnInit {
 
       console.log((this.dateTimeOfCity.substring(11,13)));
       
-      if (Number(this.dateTimeOfCity.substring(11,13))>=18 || Number(this.dateTimeOfCity.substring(11,13))<4) {
+      if (Number(this.dateTimeOfCity.substring(11,13))>=19 || Number(this.dateTimeOfCity.substring(11,13))<4) {
         this.weatherCardDetails.isNight=true;
         console.log(this.weatherCardDetails.isNight);
       }
