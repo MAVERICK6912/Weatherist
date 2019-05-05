@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {WeatherCardModel} from '../Models/Weather-card-model'
 import { WeatherService } from "../Services/weather/weather.service";
 @Component({
@@ -13,6 +13,7 @@ export class WeatherCardComponent implements OnInit {
   // currTemp: string= getCurrentTemp();
   constructor(public weatherService: WeatherService) { }
 
+  @Output() public loaderEvent=new EventEmitter();
   ngOnInit() {
     //getting time info for every city.    
     this.weatherService.getTimeOfDay('Asia','Kolkata').subscribe(res=>{
@@ -43,6 +44,7 @@ export class WeatherCardComponent implements OnInit {
       this.weatherCardDetails.maxTemp=res['main'].temp_max;
       this.weatherCardDetails.weatherCondition=res['weather'][0].main;
       this.weatherCardDetails.isLoad=false;
+      this.loaderEvent.emit(this.weatherCardDetails.isLoad);
     },
     error=>{
       console.log(error);

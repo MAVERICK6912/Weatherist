@@ -9,6 +9,4 @@ import { from } from 'rxjs';
 })
 export class AppComponent {
   constructor() { }
-  title = 'Weatherist';
-  isDataAvailable: boolean = true;
 }
