@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {WeatherCardModel} from '../Models/Weather-card-model'
 import { WeatherService } from "../Services/weather/weather.service";
+import { UiService } from "../Services/ui-service/ui.service";
 @Component({
   selector: 'app-weather-card',
   templateUrl: './weather-card.component.html',
@@ -9,13 +10,17 @@ import { WeatherService } from "../Services/weather/weather.service";
 export class WeatherCardComponent implements OnInit {
    weatherCardDetails: WeatherCardModel=new WeatherCardModel();
    dateTimeOfCity:String=new String();
+   darkMode:boolean;
 
   // currTemp: string= getCurrentTemp();
-  constructor(public weatherService: WeatherService) { }
+  constructor(public weatherService: WeatherService, public UIService:UiService) { }
 
   @Output() public loaderEvent=new EventEmitter();
 
   ngOnInit() {
+    this.UIService.darkModeState.subscribe((val)=>{
+      this.darkMode=val;
+    })    
     //getting time info for every city.    
     this.weatherService.getTimeOfDay('Asia','Kolkata').subscribe(res=>{
       console.log(res);

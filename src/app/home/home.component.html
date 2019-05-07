@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="w3-row">
+<mat-toolbar color="primary" class="w3-row" [ngClass]="{'main__header-dark': darkModeActive}">
         <div class="w3-col m1 left__div">
       <button mat-button (click)="sidenav.toggle()" ><mat-icon>menu</mat-icon></button>
     
@@ -12,7 +12,7 @@
       <div class="mode-toggle__container w3-col m2 right__div">
           <span class="mode-toggle__text">Light</span>
           <label class="toggle-button__container">
-              <mat-slide-toggle></mat-slide-toggle>
+              <mat-slide-toggle (click)="modeToggleSwitch()"></mat-slide-toggle>
           </label>
           <span class="mode-toggle__text">Dark</span>
       </div>
@@ -33,9 +33,10 @@
           </section>
       </mat-sidenav>
       <mat-sidenav-content>
-        <div class="main__container">    
-            <app-weather-card (loaderEvent)='isLoad=$event'></app-weather-card>    
-            <app-add-weather-card></app-add-weather-card>          
+        <div class="main__container" [ngClass]="{'main-container__bg-dark': darkModeActive}">
+          <div class="main-container__bg"></div>
+          <app-weather-card (loaderEvent)='isLoad=$event'></app-weather-card>    
+          <app-add-weather-card></app-add-weather-card>                          
         </div>
       </mat-sidenav-content>
     </mat-sidenav-container> 

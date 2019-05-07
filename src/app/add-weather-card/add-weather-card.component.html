@@ -6,7 +6,7 @@
     </mat-card-header>
 </mat-card> -->
 
-<mat-card class="add__card">
+<mat-card class="add__card" [ngClass]="{'add__card-dark': darkMode}">
     <mat-card-header >
         <mat-card-title class="card__title">Add City</mat-card-title>        
     </mat-card-header>
@@ -36,10 +36,12 @@
                         <rect id="Rectangle_4" width="12.8" height="142.9" class="cls-299" data-name="Rectangle 4" rx="5"
                               transform="rotate(90 603.6 1026.8)"/>
                       </svg>
-            <img src="../../assets/cityscape_day_animated.svg" alt="Add city." class="city__illustration">
-            <!-- <img src="../../assets/cityscape_night_animated.svg" alt="Add city." class="city__illustration"> -->
-            <svg class="add__icon"></svg>
-            <svg class="city__illustration"></svg>
+                      <ng-container *ngIf="!darkMode; else elseTemplate">
+                            <img src="../../assets/cityscape_day_animated.svg" ngif alt="Add city." class="city__illustration">
+                      </ng-container>
+                      <ng-template #elseTemplate>
+                            <img src="../../assets/cityscape_night_animated.svg" alt="Add city." class="city__illustration">                          
+                      </ng-template>                                              
         </div>    
     </mat-card-content>    
 </mat-card>

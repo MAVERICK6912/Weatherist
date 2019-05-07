@@ -14,6 +14,7 @@ import {MaterialComponentsModule} from './material-components/material-component
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { AddWeatherCardComponent } from './add-weather-card/add-weather-card.component';
 import { WeatherService } from "./Services/weather/weather.service";
+import { UiService } from "./Services/ui-service/ui.service";
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { WeatherService } from "./Services/weather/weather.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [WeatherService],
+  providers: [WeatherService,UiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

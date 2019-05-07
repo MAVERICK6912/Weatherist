@@ -6,6 +6,17 @@
 .example-sidenav {
     width: 30%;
 }
+/* Start: for dark theme. */
+.main__header-dark {
+  background-color: #2B244D;
+  color: white;
+}
+.main-container__bg-dark {
+  opacity: 1;
+  background: linear-gradient(to bottom, #B290FF, #2E1D65);
+  transition: opacity 300ms linear;
+}
+/* End: for dark theme. */
 .menu-header {
     background: linear-gradient(to right, #00FF9B, #5f84fb);
     display: grid;
@@ -188,4 +199,15 @@
     align-items: center;
     justify-items: center;
     height: 100%;
+  }
+  .main-container__bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    opacity: 0;
+    background: white;
+    transition: opacity 300ms linear;
   }
