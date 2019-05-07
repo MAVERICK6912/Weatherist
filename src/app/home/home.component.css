@@ -180,3 +180,12 @@
         box-shadow: 0 0 0 0 rgba(24,255,255 , 0);
     }
   }
+/* For displaying weather-card & add-weather-card side-by-side. */
+  .main__container {
+    display: grid;
+    grid-template-columns: repeat(4, 0.5fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+  }

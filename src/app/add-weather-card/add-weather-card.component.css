@@ -1,0 +1,44 @@
+.add__card {
+    background-color: #ffffff;
+    box-shadow: 0 0 2rem rgba(0, 0, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 2fr;
+    padding: 2rem;
+    margin: 1rem;
+    width: 20rem;
+    height: 35rem;
+    justify-items: center;
+    cursor: pointer;
+    border-radius: 1.75rem;
+    animation: 1.25s ease-in-out 0ms 1 fadein;
+    color: #443282;
+  }
+  
+  .add__card-dark {
+    background: linear-gradient(to bottom, #711B86, #00057A);
+    color: white;
+  }
+  
+  .card__title {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+  
+  .city__illustration {
+    width: 16rem;
+    height: 17rem;
+  }
+  
+  .body__container {
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+  }
+  
+  .add__icon {
+    width: 10rem;
+    margin-bottom: 2rem;
+  }

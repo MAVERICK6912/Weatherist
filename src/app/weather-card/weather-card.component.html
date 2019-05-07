@@ -1,4 +1,4 @@
-<mat-card class="weather__card">
+<mat-card class="weather__card" [ngClass]="{'weather__card-dark': darkMode}">
     <mat-card-header>            
       <mat-card-title class="city-name__text">{{weatherCardDetails.cityName}}</mat-card-title>                  
     </mat-card-header>
@@ -172,15 +172,13 @@
                 </g>              
               </svg>
           </div>
-          <ng-template #elseBlock>
-              <div #elseBlock>
-                  <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Clear'||weatherCardDetails.weatherCondition==='Sunny'" src="../../assets/weather_night_clear_better.svg" alt="Clear skies" />
-                  <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Rain'||weatherCardDetails.weatherCondition==='Drizzle'" src="../../assets/weather_night_rain_better.svg" alt="Rainy" />
-                  <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Thunderstorm'" src="../../assets/weather_night_storm_better.svg" alt="Clear skies" />
-                  <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Clouds'" src="../../assets/weather_cloudy_night_better.svg" alt="Cloudy" />
-                  <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Snow'||weatherCardDetails.weatherCondition==='Light Snow'||weatherCardDetails.weatherCondition==='Heavy Snow'" src="../../assets/weather_night_snow_better.svg" alt="Clear skies" />
-                  <!-- <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Clear'||weatherCardDetails.weatherCondition==='Sunny'" src="../../assets/weather_night_clear_better.svg" alt="Clear skies" /> -->
-              </div>
+          <ng-template #elseBlock>              
+                <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Clear'||weatherCardDetails.weatherCondition==='Sunny'" src="../../assets/weather_night_clear_better.svg" alt="Clear skies" />
+                <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Rain'||weatherCardDetails.weatherCondition==='Drizzle'" src="../../assets/weather_night_rain_better.svg" alt="Rainy" />
+                <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Thunderstorm'" src="../../assets/weather_night_storm_better.svg" alt="Clear skies" />
+                <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Clouds'" src="../../assets/weather_cloudy_night_better.svg" alt="Cloudy" />
+                <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Snow'||weatherCardDetails.weatherCondition==='Light Snow'||weatherCardDetails.weatherCondition==='Heavy Snow'" src="../../assets/weather_night_snow_better.svg" alt="Clear skies" />
+                  <!-- <img *ngSwitchCase="weatherCardDetails.weatherCondition==='Clear'||weatherCardDetails.weatherCondition==='Sunny'" src="../../assets/weather_night_clear_better.svg" alt="Clear skies" /> -->              
           </ng-template>                                            
         </div>        
       </div>
