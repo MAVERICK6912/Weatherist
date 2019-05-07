@@ -14,6 +14,7 @@ export class WeatherCardComponent implements OnInit {
   constructor(public weatherService: WeatherService) { }
 
   @Output() public loaderEvent=new EventEmitter();
+
   ngOnInit() {
     //getting time info for every city.    
     this.weatherService.getTimeOfDay('Asia','Kolkata').subscribe(res=>{
@@ -48,7 +49,6 @@ export class WeatherCardComponent implements OnInit {
     },
     error=>{
       console.log(error);
-    });
-    // console.log((this.dateTimeOfCity.substring(11,13)));
+    });   
   }
 }
